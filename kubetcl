@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+    name: nginx 
+spec:
+    containers:
+    - name: nginx-container
+      image: nginx
+      
+kubectl apply -f nginx.yaml
+
+kubectl port-forward --address 0.0.0.0 nginx 3001:80
